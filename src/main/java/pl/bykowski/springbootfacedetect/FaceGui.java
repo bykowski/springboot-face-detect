@@ -13,6 +13,7 @@ import pl.bykowski.springbootfacedetect.model.FaceObject;
 @Route
 public class FaceGui extends VerticalLayout {
 
+
     public FaceGui(FaceApiClient faceApiClient) {
 
         TextField textField = new TextField("Image:");
@@ -25,6 +26,7 @@ public class FaceGui extends VerticalLayout {
             grid.addColumn(c -> c.getFaceAttributes().getAge()).setHeader("Age");
             grid.addColumn(c -> c.getFaceAttributes().getEmotion()).setHeader("Emotion").setWidth("1000px");
             Image image = new Image(textField.getValue(), textField.getValue());
+            add(image);
         });
         add(textField, button, grid);
     }
